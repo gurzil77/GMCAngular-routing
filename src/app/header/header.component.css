@@ -1,0 +1,8 @@
+a {
+    text-decoration: none;
+    margin: 10px;
+}
+.activeRoute {
+    color: red;
+    text-decoration: underline;
+}

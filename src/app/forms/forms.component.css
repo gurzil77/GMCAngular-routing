@@ -1,0 +1,22 @@
+label {
+    width: 50px;
+    display: inline-block;
+    margin-right: 10px;
+}
+input {
+    margin: 5px 10px;
+    width: 400px;
+}
+button {
+    margin-left: 230px;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.email-alert, .password-alert {
+    background-color: pink;
+    margin-left: 70px;
+    width: 400px
+}

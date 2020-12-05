@@ -1,0 +1,11 @@
+input {
+    display: block;
+}
+input.ng-invalid.ng-touched {
+    border : 1px solid red;
+}
+.errorMessage {
+    background-color: lightcoral;
+    width: 180px;
+    margin: 10px 0px;
+}

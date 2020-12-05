@@ -1,0 +1,9 @@
+.embauche {
+    border : 1px deepskyblue solid;
+    border-radius: 50px;
+    width: 500px;
+    text-align: center;
+}
+span {
+    margin: 10px;
+}

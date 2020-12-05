@@ -1,0 +1,20 @@
+<form #personForm="ngForm">
+    <div ngModelGroup="userdata" #userdata="ngModelGroup">
+        Name : 
+        <input type="text" ngModel name="name" required>
+        First Name : 
+        <input type="text" ngModel name="firstname" required>
+        CIN :
+        <input type="number" ngModel name="cin" required>
+        Job : 
+        <input type="text" ngModel name="job" required>
+        Age : 
+        <input type="number" ngModel name="age" required>
+        ID : 
+        <input type="number" ngModel name="id">
+        Path :
+        <input type="text" ngModel name="path">
+    </div>
+    <div class="errorMessage" *ngIf="userdata.invalid && userdata.touched"> Check your data</div>
+</form>
+<button (click)="addPerson(personForm.value)" [disabled]="personForm.invalid">Add Person</button>

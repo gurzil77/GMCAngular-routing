@@ -1,0 +1,4 @@
+<div class="embauche" *ngIf="embauchees.length">
+    <h2>Liste des CVs selectionnes pour embauchage</h2>
+    <span *ngFor="let embauchee of embauchees">{{embauchee.firstname}} {{embauchee.name}}</span>
+</div>

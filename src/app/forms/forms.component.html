@@ -1,0 +1,21 @@
+<br><br>
+<form #myForm="ngForm">
+    <label for="email">Email</label>
+    <input type="text" name="email" required email ngModel #email="ngModel"> <br>
+
+    <div class="email-alert" *ngIf="email.invalid && email.touched ">
+        <p>Wrong Email. Please enter a valid Email</p>
+    </div>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" required minlength="4" ngModel #password="ngModel"> 
+
+    <div class="password-alert" *ngIf="password.invalid && password.touched">
+        <p>Wrong password. Please enter a valid password</p>
+    </div>
+    <br>
+    <button 
+        [disabled]="myForm.invalid"
+        (click)="login(myForm)">Login</button>
+
+</form>

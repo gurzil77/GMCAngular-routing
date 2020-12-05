@@ -15,4 +15,4 @@ export class AuthenticationService {
 login(credentials) {
   return this.http.post(API_AUTH_LINK,credentials)
 }
-}
+} 

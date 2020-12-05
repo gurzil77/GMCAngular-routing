@@ -31,10 +31,18 @@ export class DetailPersonComponent implements OnInit {
   }
   
   
-  deletePerson() {
+  /* deletePerson() {
     if (this.cvService.deletePerson(this.personne)) {
       this.router.navigate(['hiringcv'])
     }
+  } */
+
+  deletePerson(id){
+    this.cvService.deletePersonByIdObservable(id).subscribe(
+      (deleted)=> {
+          const LINK = ['hiringcv'];
+          this.router.navigate(LINK)}        
+    )
   }
 
 }

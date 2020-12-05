@@ -20,7 +20,8 @@ export class FormsComponent implements OnInit {
   login(myForm :NgForm) {
     this.authentication.login(myForm.value).subscribe(
       (data) => { 
-        localStorage.setItem('token', data.id);
+        console.log(data)
+        localStorage.setItem('token', data["id"]);
         this.router.navigate(['hiringcv'])
       },
       (error) => {console.log(error)}

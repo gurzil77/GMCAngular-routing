@@ -25,9 +25,8 @@ export class AddComponent implements OnInit {
     this.router.navigate(LINK)
   } */ 
   addPerson(person : Personne) {
-    this.cvService.addPerson(person).subscribe(
+    this.cvService.addPerson(person["userdata"]).subscribe(
       (resolve) => {
-        console.log(resolve)
         const LINK = ['hiringcv'];
         this.router.navigate(LINK)},
 

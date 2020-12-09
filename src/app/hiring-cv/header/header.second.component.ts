@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-second-header',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderSecondComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authentication : AuthenticationService,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+  }
+  
+  logout() {
+    this.authentication.logout()
+    this.router.navigate(['forms'])
   }
 
 }

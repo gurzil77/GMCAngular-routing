@@ -1,4 +1,5 @@
 <a [routerLink]="['']" routerLinkActive="active">Home</a>
 <a [routerLink]="['/hiringcv']" routerLinkActive="active">CV Tech</a>
 <a [routerLink]="['/hiringcv/add']" routerLinkActive="active">Add Person</a>
-<a [routerLink]="['forms']" routerLinkActive="active">Login</a>
+<a [routerLink]="['forms']" routerLinkActive="active" *ngIf="!authentication.isAuthenticated()">Login</a>
+<a class="logout" (click)="logout()" *ngIf="authentication.isAuthenticated()" routerLinkActive="active">Logout</a>

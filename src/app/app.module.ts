@@ -22,6 +22,7 @@ import { FormsComponent } from './forms/forms.component';
 import {FormsModule} from '@angular/forms';
 import { AddComponent } from './hiring-cv/add/add.component'
 import { HttpClientModule } from '@angular/common/http'
+import { AuthInterceptorProvider } from './interceptors/auth-interceptor';
 
 
 
@@ -53,7 +54,7 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -59,7 +59,7 @@ export class CvService {
     return this.http.get<Personne>(API_LINK+ id)
   }
 
-  deletePerson(person : Personne) {
+  /*deletePerson(person : Personne) {
     const index = this.personnes.indexOf(person)
     if (index === -1) {
       alert('Person inexistent')
@@ -68,12 +68,15 @@ export class CvService {
       this.personnes.splice(index, 1)
       return 1;
     }
-  }
+  } */
   deletePersonByIdObservable(id) : Observable<Personne> {
-    const token = localStorage.getItem('token');
+    /*const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization',token)
     if (token) 
-    {return this.http.delete<Personne>(API_LINK+ id,{headers}) } 
+    {return this.http.delete<Personne>(API_LINK+ id,{headers}) } */
+    return this.http.delete<Personne>(API_LINK+ id)
+
+
   }
   /*addPerson (person : Personne) {
     const id = this.personnes[this.personnes.length - 1].id;
@@ -82,7 +85,7 @@ export class CvService {
   } */
 
   addPerson (person: Personne) {
-    const token = localStorage.getItem('token');
+    /* const token = localStorage.getItem('token');
     if (token) {  
       let p={
         // "id":0,
@@ -95,12 +98,19 @@ export class CvService {
       }
       const headers = new HttpHeaders().set('Authorization', token)
       return this.http.post(API_LINK, p, {headers});
-    } else {
-      console.log("no token")
-      return this.http.post(API_LINK, person)}
-
-  }
-
+    } 
+  } */
+      let p={
+        // "id":0,
+        "name": person.name,
+        "firstname": person.firstname,
+        "cin": person.cin,
+        "job": person.job,
+        "path": person.path,
+        "age": person.age
+      }
+      return this.http.post(API_LINK, p);
+} 
   clickedPerson(person: Personne) {
     this.selectedPersonSubject.next(person)
   }
